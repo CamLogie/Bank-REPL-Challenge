@@ -9,7 +9,7 @@ class Transaction {
     if (this.value > 0) {
       return 'credit'
     }
-    else if (this.value < 0) {
+    else {
       return 'debit'
     }
   }
