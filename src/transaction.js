@@ -1,16 +1,7 @@
 class Transaction {
-  constructor(value) {
+  constructor(value, transactionType) {
     this.value = value
     this.timestamp = new Date().toLocaleDateString()
-    this.type = this.type_of_transaction()
-  }
-
-  type_of_transaction() {
-    if (this.value > 0) {
-      return 'credit'
-    }
-    else {
-      return 'debit'
-    }
+    this.type = transactionType
   }
 }
