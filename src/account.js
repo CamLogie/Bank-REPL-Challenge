@@ -5,10 +5,13 @@ class Account {
   }
   
   deposit(value) {
+    this.balance += value
     this.transactions.push(new Transaction(value, 'credit'))
   }
 
   withdraw(value) {
+    this.balance -= value
     this.transactions.push(new Transaction(value, 'debit'))
   }
+
 }

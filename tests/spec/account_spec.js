@@ -22,4 +22,15 @@ describe('Account', () => {
     expect(account.transactions[0].type).toBe('debit')
   })
 
+  it('deposit method adds money from the balance ', () => {
+    account.deposit(400)
+    expect(account.balance).toBe(400)
+  })
+
+  it('withdraw method subtracts money from the balance ', () => {
+    account.deposit(300)
+    account.withdraw(200)
+    expect(account.balance).toBe(100)
+  })
+
 })
