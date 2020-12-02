@@ -9,10 +9,12 @@ class printStatement {
 
     this.account.transactions.forEach( transaction => { 
       if (transaction.type === 'credit') {
-        statement += `${transaction.timestamp} || ${transaction.type} || || ${balance += transaction.value}\n`
+        balance += transaction.value
+        statement += `${transaction.timestamp} || ${transaction.value.toFixed(2)} || || ${balance.toFixed(2)}\n`
       }
       else {
-        statement += `${transaction.timestamp} || || ${transaction.type} || ${balance -= transaction.value}\n`
+        balance -= transaction.value
+        statement += `${transaction.timestamp} || || ${transaction.value.toFixed(2)} || ${balance.toFixed(2)}\n`
       }
       
     });

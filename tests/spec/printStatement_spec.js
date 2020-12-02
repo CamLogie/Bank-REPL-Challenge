@@ -4,7 +4,7 @@ describe('printStatement', () => {
 
   beforeEach(() => {
     account = { 
-      balance: 100, 
+      balance: 0, 
       transactions: [
         { value: 1000,
           timestamp: new Date().toLocaleDateString(),
@@ -26,13 +26,13 @@ describe('printStatement', () => {
 
   it('has method printStatement that prints each transaction', () => {
     statement = new printStatement(account)
-    spyOn(console, 'log');
+    spyOn(console, 'log')
     statement.printStatement()
     expect(console.log).toHaveBeenCalledWith(
     `Date || Credit || Debit || Balance\n` + 
-    `${account.transactions[0].timestamp} || ${account.transactions[0].type} || || 1000\n` + 
-    `${account.transactions[1].timestamp} || || ${account.transactions[1].type} || 500\n` +
-    `${account.transactions[2].timestamp} || || ${account.transactions[2].type} || 100\n`)
+    `${account.transactions[0].timestamp} || ${account.transactions[0].value.toFixed(2)} || || 1000.00\n` + 
+    `${account.transactions[1].timestamp} || || ${account.transactions[1].value.toFixed(2)} || 500.00\n` +
+    `${account.transactions[2].timestamp} || || ${account.transactions[2].value.toFixed(2)} || 100.00\n`)
   })
 
 
