@@ -4,6 +4,7 @@ class printStatement {
   } 
 
   printStatement() {
+    
     let statement = `Date || Credit || Debit || Balance\n`
     let balance = 0
 
